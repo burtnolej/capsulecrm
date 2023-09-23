@@ -1,0 +1,116 @@
+import sys
+import os
+from prettytable import PrettyTable
+from veloxutils import process_args,recover, removeunicode, get_entity_fields, iter_entity_fields, parse_custom_fields, clean, _get_set, get_query
+
+_args = process_args(sys.argv,["entity","entity_key"])
+for _arg in _args:
+    locals()[_arg] = _args[_arg]
+
+#opportunities = recover("opportunities")
+#entries = recover("entries")
+#organisation = recover("organisation")
+
+entites = recover(entity)
+index={}
+for _entity in entities:
+    _index = _entity[key]
+    if index.has_key(key) == True:
+        _index[key].append(_entity)
+    else:
+        _index[key=[_entity]
+
+pickle_name = entity+"_"+key+".pickle"
+
+with open(pickle+name, 'wb') as f:
+    pickle.dump(index, f, pickle.HIGHEST_PROTOCOL)
+exit()
+
+
+errors=[]
+rowcount=0
+_columns=[]
+_output=[]
+
+def _append(row,value):
+
+    def __append(row,value):
+        try:
+            value = str(value).replace("\n","")
+            _value = removeunicode(str(value))
+            row.append(_value)
+        except Exception, e:
+            row.append("encoding error:"+e.message)
+
+    if isinstance(value,dict)==True:
+        if value.has_key("name"):
+            __append(_row,value["name"])
+        elif value.has_key("amount"):
+            __append(_row,value["amount"])
+        else:
+            __append(_row,value)
+    elif isinstance(value,list)==True:
+        if len(value)>0:
+            if value[0].has_key("number"):
+                __append(_row,value[0]["number"])
+            elif value[0].has_key("address"):
+                __append(_row,value[0]["address"])
+            else:
+                __append(_row,value)
+        else:
+            __append(_row,"NOTSET")
+    elif isinstance(value,type(None))==True:
+        __append(_row,"NOTSET")
+    else:
+        __append(_row,value)
+
+for _entity in entities:
+    if _entity=="timestamp":
+        continue
+
+    _row=[]
+    _thisentity= entities[_entity]
+
+    else:
+         if _entity != "timestamp" and isinstance(entities[_entity],dict)==True:
+              for _outputfield in entities[_entity].keys():
+                  if _outputfield == "fields":
+                      for i in range(0,len(entities[_entity][_outputfield])):
+                          _append(_row,entities[_entity][_outputfield][i]["value"])
+                  elif isinstance(entities[_entity][_outputfield],dict)==True:
+                      if entities[_entity][_outputfield].has_key("name"):
+                          _append(_row,entities[_entity][_outputfield]["name"])
+                      elif entities[_entity][_outputfield].has_key("amount"):
+                          _append(_row,entities[_entity][_outputfield]["amount"])
+                      else:
+                          _append(_row,entities[_entity][_outputfield])
+                  elif isinstance(entities[_entity][_outputfield],list)==True:
+                      if len(entities[_entity][_outputfield])>0:
+                          if entities[_entity][_outputfield][0].has_key("number"):
+                              _append(_row,entities[_entity][_outputfield][0]["number"])
+                          elif entities[_entity][_outputfield][0].has_key("address"):
+                              _append(_row,entities[_entity][_outputfield][0]["address"])
+                          else:
+                              _append(_row,entities[_entity][_outputfield])
+                      else:
+                          _append(_row,"NOTSET")
+
+                  elif entities[_entity].has_key(_outputfield):
+                      _append(_row,entities[_entity][_outputfield])
+                  else:
+                      _append(_row,"NOTSET")
+         else:
+              print "not dict"
+
+entities_indexed={}
+for _entity in entities.keys():
+    for _custom_field in entity + "_custom_fields":
+        if entities_indexed.has_key
+    for _custom_field in entity + "_core_fields":
+        if entities_indexed.has_key
+    for _custom_field in entity + "_date_fields":
+        if entities_indexed.has_key
+
+elif outputtype=="query":
+    get_query(entities,query)
+
