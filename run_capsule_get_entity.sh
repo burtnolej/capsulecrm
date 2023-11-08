@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd /home/burtnolej/sambashare/veloxmon/capsulecrm
-. ../.bashrc
+. ~/.bashrc
 
 TODAY=`date +%Y%m%d`
 NOW=`date +%Y%m%d`
@@ -18,8 +18,10 @@ export DIRDATAFILES=$DIRWEB/datafiles
 logname=/tmp/${0##*/}.$NOW.log
 outputpath=/var/www/html/datafiles
 
-entities=("person")
-#entities=("organisation" "entries" "opportunities" "person")
+#entities=("person")
+entities=("person" "join")
+
+#entities=("organisation" "entries" "opportunities" "person" )
 outputtype="list"
 outputfields="model"
 

@@ -149,6 +149,34 @@ def _get_data_header(url,access_token,tag):
 def get_remaining_rate(access_code):
     return int(_get_data_header("https://api.capsulecrm.com/api/v2/site",access_code,"X-RateLimit-Remaining"))
 
+def _put_data(url,access_token,tag,data):
+
+#curl -i -X POST -H "Authorization: Bearer {token}" \
+#-H "Content-Type: application/json" \
+#-H "Accept: application/json" \
+#-d '{
+#  "party": {
+#    "type": "organisation",
+#    "name": "Acme INC"
+#  }
+#}' https://api.capsulecrm.com/api/v2/parties
+
+
+    _url = url+'?embed=fields,tags'
+
+    response = requests.post(_url, headers=_header(access_token), data=json.dumps(data))
+
+    if response.status_code != 200 and  response.status_code != 201:
+        print "code:"+str(response.status_code) + " msg:"+response.text + ":" + url
+
+    return response.json()[tag]['id']
+
+def _get_data_simple(url,access_token):
+
+    httpfunc = getattr(requests,"get")
+    url = url+'?embed=fields'
+    return httpfunc(url,headers=_header(access_token))
+
 def _get_data(url,access_token,tag,data,start_page=1, max_num_pages=10000):
 
     results=[]
@@ -174,15 +202,28 @@ def _get_data(url,access_token,tag,data,start_page=1, max_num_pages=10000):
 
 
     pagenum=1
+
     while morepages==True:
         url =  response.links['next']['url']
         print url
-        response = httpfunc(url,headers=_header(access_token),data=json.dumps(data))
-        results = results + response.json()[tag]
+        trynum=0
+        while trynum<5:
+            try:
+                response = httpfunc(url,headers=_header(access_token),data=json.dumps(data))
+                results = results + response.json()[tag]
+                trynum=5
+            except Exception, e:
+                print e.message
+                
+            trynum=trynum+1
+            
+        time.sleep(1)
         morepages = response.links.has_key('next')
         if pagenum > max_num_pages:
             return results
         pagenum=pagenum+1
+            
+
 
     return results
 
@@ -190,7 +231,8 @@ def _header(access_token):
     _headers = {
         'Content-type': 'application/json',
             'Authorization': 'Bearer {}'.format(access_token),
-            'Accept': 'application/json'
+            'Accept': 'application/json',
+            'USER-AGENT' : 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.82 Safari/537.36'
     }
 
     return _headers

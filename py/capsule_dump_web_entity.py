@@ -36,7 +36,7 @@ entities_results={}
 
 for _entity in entities:
     entities_results[_entity["id"]] = _entity
-    print _entity
+    #print _entity
 
 
 t2 = datetime.datetime.now()

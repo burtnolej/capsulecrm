@@ -32,47 +32,49 @@ def _or(value):
         value = value.split("|")
     return value
 
-results=[]
-for entity,field,value in query_terms:
-    value = _or(value)
+query_results=[]
+for query in query_terms:
+    results=[]
+    for entity,field,value in query:
+        value = _or(value)
 
-    if inlocals(entity) == False:
-        index_name = entity+"_"+field.replace(" ","_").lower()
-        pickle_name = index_name+".pickle" 
-        setlocal(index_name,recover(pickle_name,True))
-        if len(getlocal(index_name).keys())==0:
-            sys.stderr.write("empty index returned for " + index_name)
-            exit()
+        if inlocals(entity) == False:
+            index_name = entity+"_"+field.replace(" ","_").lower()
+            pickle_name = index_name+".pickle" 
+            setlocal(index_name,recover(pickle_name,True))
+            if len(getlocal(index_name).keys())==0:
+                sys.stderr.write("empty index returned for " + index_name)
+                exit()
 
-    _results=[]
-    for _value in value:
-        if getlocal(index_name).has_key(_value)==True:
-            hits=getlocal(index_name)[_value]
-            _results = _results + hits
-    results.append(_results)
+        _results=[]
+        for _value in value:
+            if getlocal(index_name).has_key(_value)==True:
+                hits=getlocal(index_name)[_value]
+                _results = _results + hits
+        results.append(_results)
 
 
-query_results = get_intersect(results)
+    query_results = query_results + list(get_intersect(results))
 
 print str(len(query_results))+" results found"
 # specifically for person results for campaignsd
-entries = recover("entries")
-fh =open(outputfile,"w+")
-fh.write("^".join(outputfields))
+#entries = recover("entries")
+#fh =open(outputfile,"w+")
+#fh.write("^".join(outputfields)+"\n")
 
 
-for _entity in query_results:
-     #fh.write("^".join(removeunicode(x) for x in get_multi_field(entries,_entity,["activityType","id","creator","subject","content","party","createdOn"]))+"\n")
-     fh.write("^".join(str(removeunicode(x)) for x in get_multi_field(entries,_entity,outputfields))+"\n")
-fh.close()
-exit()
+#for _entity in query_results:
+#     #fh.write("^".join(removeunicode(x) for x in get_multi_field(entries,_entity,["activityType","id","creator","subject","content","party","createdOn"]))+"\n")
+#     fh.write("^".join(str(removeunicode(str(x))) for x in get_multi_field(entries,_entity,outputfields))+"\n")
+#fh.close()
+#exit()
 
 # specifically for person results for campaignsd
 person = recover("person")
 fh =open(outputfile,"w+")
 
-fields=["firstName","lastName","jobTitle","Seniority","id","LinkedInURL","emailAddresses","phoneNumbers"]
-fh.write("^".join(fields))
+fields=["firstName","lastName","jobTitle","Seniority","Job Type","Department","Sub Department","id","LinkedInURL","emailAddresses","phoneNumbers"]
+fh.write("^".join(fields)+"\n")
 for _entity in query_results:
     #print get_core_field(person,_entity,"firstName")
     #print get_field(person,_entity,"firstName")

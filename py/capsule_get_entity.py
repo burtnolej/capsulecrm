@@ -67,15 +67,27 @@ for _entity in entities:
     _thisentity= entities[_entity]
 
     if outputfields=="model":
-         for _outputfield in iter_entity_fields("core",entity):
+         for _outputfield in iter_entity_fields("address",entity):
               if _thisentity.has_key(_outputfield):
                   _append(_row,_thisentity[_outputfield])
               else:
                   _append(_row,"NOTSET")
+         for _outputfield in iter_entity_fields("core",entity):
+
+              if _thisentity.has_key(_outputfield):
+                  _append(_row,_thisentity[_outputfield])
+              else:
+                  _append(_row,"NOTSET")
+
+
          for _outputfield in iter_entity_fields("date",entity):
               if _thisentity.has_key(_outputfield):
                   if _thisentity[_outputfield] != None:
-                       _append(_row,_thisentity[_outputfield][:10])
+                      if isinstance(_thisentity[_outputfield],int) == True:
+                          # this is the empty row case when date is equal to -1
+                          _append(_row,_thisentity[_outputfield])
+                      else:
+                          _append(_row,_thisentity[_outputfield][:10])
                   else:
                        _append(_row,"NOTSET")
               else:
