@@ -282,13 +282,17 @@ def process_args(_args,_must_be_set=[]):
              sys.stderr.write("mandatory arg \"entity_key\" missing\n")
              exit()
 
+    if _l.has_key("entity_key") == True:
+        _l["entity_key"] = _l["entity_key"].replace("__"," ")
+
+
     if _l.has_key("index_dict"):
         _id = ast.literal_eval(_l["index_dict"])
         _l["entity"] = _id["entity"].replace("$$"," ")
-        _l["entity_key"] = _id["entity_key"].replace("$$"," ")
+        _l["entity_key"] = _id["entity_key"].replace("__"," ")
         if _id.has_key("subentity_key") == True:
             if  _id["subentity_key"] != None:
-                _l["subentity_key"] = _id["subentity_key"].replace("$$"," ")
+                _l["subentity_key"] = _id["subentity_key"].replace("__"," ")
 
     if _l.has_key("start_page") == False:
         sys.stderr.write("start_page arg defaulted to 1\n")
