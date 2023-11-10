@@ -1,0 +1,4 @@
+query1^query2^filename
+[("person","Sub Department","EQUITIES"),("person","Seniority","CSUITE|SENIOR")]^[("person","Sub Department","CASH_EQUITIES"),("person","Seniority","CSUITE|SENIOR")]^equities_csuite_senior_midlevel.csv
+[("entries","activityType","Meeting")]^^entries_meetings.csv
+[("person","Sub Department","CLEARED_DERIVS"),("person","Seniority","CSUITE|SENIOR|MID_LEVEL")]^cleared_derivs_csuite_senior_midlevel.csv

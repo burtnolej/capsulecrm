@@ -1,0 +1,311 @@
+Seniority^CSUITE^SINGLE^Chief$$Executive^AMBER_MAYBE
+Seniority^CSUITE^SINGLE^Chief$$Information^AMBER_MAYBE
+Seniority^CSUITE^SINGLE^Chairman^AMBER_MAYBE
+Seniority^CSUITE^SINGLE^Editor-in-Chief and CCO^GREEN
+Seniority^CSUITE^SINGLE^Chief Financial Officer^GREEN
+Seniority^CSUITE^SINGLE^Chief Operating Officer^AMBER_MAYBE
+Seniority^CSUITE^SINGLE^Chief Technology Officer^AMBER_MAYBE
+Seniority^CSUITE^SINGLE^President^AMBER_MAYBE
+Seniority^CSUITE^SINGLE^Chief Investment Officer^AMBER_MAYBE
+Seniority^CSUITE^SINGLE^CIO^AMBER_MAYBE
+Seniority^CSUITE^SINGLE^CFO^AMBER_MAYBE
+Seniority^CSUITE^SINGLE^CEO^AMBER_MAYBE
+Seniority^CSUITE^SINGLE^Board^AMBER_MAYBE
+Seniority^CSUITE^SINGLE^Chairman^AMBER_MAYBE
+Seniority^SENIOR^SINGLE^CTO$$!Director$$!Instructor$$!Contractor$$!Sector$$!Doctor^GREEN
+Seniority^SENIOR^SINGLE^Managing Director^GREEN
+Seniority^SENIOR^SINGLE^MD^GREEN
+Seniority^SENIOR^SINGLE^md^GREEN
+Seniority^CSUITE^SINGLE^COO^GREEN
+Seniority^SENIOR^SINGLE^Partner$$!Talent^GREEN
+Seniority^SENIOR^SINGLE^Senior Vice President$$!Accounts^GREEN
+Seniority^SENIOR^SINGLE^Head$$of^GREEN
+Seniority^SENIOR^SINGLE^Senior Director^GREEN
+Seniority^SENIOR^SINGLE^SVP^GREEN
+Seniority^SENIOR^SINGLE^EVP^GREEN
+Seniority^SENIOR^SINGLE^Owner^GREEN
+Seniority^SENIOR^SINGLE^Founder^GREEN
+Seniority^SENIOR^SINGLE^Principal^GREEN
+Seniority^SENIOR^SINGLE^Deputy head^GREEN
+Seniority^SENIOR^SINGLE^head^GREEN
+Seniority^SENIOR^SINGLE^Head^GREEN
+Seniority^MID_LEVEL^SINGLE^V P^AMBER
+Seniority^MID_LEVEL^SINGLE^Management^AMBER
+Seniority^MID_LEVEL^SINGLE^Manager^AMBER
+Seniority^MID_LEVEL^SINGLE^Business Development^AMBER
+Seniority^MID_LEVEL^SINGLE^Vice President$$!Senior Vice President^AMBER
+Seniority^MID_LEVEL^SINGLE^VP^AMBER
+Seniority^MID_LEVEL^SINGLE^Executive Director^AMBER
+Seniority^MID_LEVEL^SINGLE^Senior^AMBER
+Seniority^MID_LEVEL^SINGLE^Trader^RED
+Seniority^MID_LEVEL^SINGLE^Sales^RED
+Seniority^MID_LEVEL^SINGLE^Trading^RED
+Seniority^MID_LEVEL^SINGLE^trader^RED
+Seniority^MID_LEVEL^SINGLE^Director^AMBER
+Seniority^JUNIOR^SINGLE^Programmer^RED
+Seniority^JUNIOR^SINGLE^Algo Trading Support^
+Seniority^JUNIOR^SINGLE^PM^RED
+Seniority^JUNIOR^SINGLE^Developer^RED
+Seniority^JUNIOR^SINGLE^Engineer^RED
+Seniority^JUNIOR^SINGLE^Project Manager^RED
+Seniority^JUNIOR^SINGLE^Consultant^RED
+Seniority^JUNIOR^SINGLE^Business Analyst^RED
+Seniority^JUNIOR^SINGLE^Operations^RED
+Seniority^JUNIOR^SINGLE^Associate^RED
+Seniority^JUNIOR^SINGLE^IT$$!Credit^RED
+Seniority^JUNIOR^SINGLE^Support^RED
+Seniority^JUNIOR^SINGLE^Analyst^RED
+Seniority^JUNIOR^SINGLE^Production Support^RED
+Seniority^UNKNOWN_Seniority^SINGLE^DEFAULT^GREY
+Department^LEADERSHIP^SINGLE^Chief^AMBER_MAYBE
+Department^LEADERSHIP^SINGLE^Technology$$Operations^AMBER_MAYBE
+Department^LEADERSHIP^SINGLE^Executive$$!Account^AMBER_MAYBE
+Department^LEADERSHIP^SINGLE^Partner$$!Talent^AMBER_MAYBE
+Department^LEADERSHIP^SINGLE^Senior Vice President^AMBER_MAYBE
+Department^LEADERSHIP^SINGLE^Founder^AMBER_MAYBE
+Department^LEADERSHIP^SINGLE^Principal^AMBER_MAYBE
+Department^LEADERSHIP^SINGLE^Board^AMBER_MAYBE
+Department^LEADERSHIP^SINGLE^Head of IT^AMBER_MAYBE
+Department^LEADERSHIP^SINGLE^MD^AMBER_MAYBE
+Department^LEADERSHIP^SINGLE^Managing Director^AMBER_MAYBE
+Department^LEADERSHIP^SINGLE^President^AMBER_MAYBE
+Department^LEADERSHIP^SINGLE^CIO^AMBER_MAYBE
+Department^LEADERSHIP^SINGLE^COO^AMBER_MAYBE
+Department^LEADERSHIP^SINGLE^CFO^AMBER_MAYBE
+Department^LEADERSHIP^SINGLE^CEO^AMBER_MAYBE
+Department^LEADERSHIP^SINGLE^CTO$$!Director$$!Instructor$$!Contractor$$!Sector$$!Doctor^AMBER_MAYBE
+Department^FRONT_OFFICE^SINGLE^Trading$$!Data$$!Support^GREEN
+Department^FRONT_OFFICE^SINGLE^Trader^GREEN
+Department^FRONT_OFFICE^SINGLE^Sales^GREEN
+Department^FRONT_OFFICE^SINGLE^Product Manager^GREEN
+Department^FRONT_OFFICE^SINGLE^trader^GREEN
+Department^FRONT_OFFICE^SINGLE^Portfolio Manager^GREEN
+Department^FRONT_OFFICE^SINGLE^Quant^GREEN
+Department^FRONT_OFFICE^SINGLE^Strat^GREEN
+Department^FRONT_OFFICE^SINGLE^Equity$$!FIX$$!Low Latency$$!Client Connectivity$$!Operations^GREEN
+Department^FRONT_OFFICE^SINGLE^Equities$$!FIX$$!Low Latency$$!Client Connectivity$$!Operations^GREEN
+Department^OPERATIONS^SINGLE^Middle Office^AMBER
+Department^OPERATIONS^SINGLE^Onboarding^RED
+Department^OPERATIONS^SINGLE^Operations^AMBER
+Department^FEDERATION^SINGLE^Compliance^RED
+Department^FEDERATION^SINGLE^Risk^RED
+Department^FEDERATION^SINGLE^Finance^RED
+Department^FEDERATION^SINGLE^Legal^RED
+Department^CORE_INFRA^SINGLE^Security^RED
+Department^CORE_INFRA^SINGLE^Cloud^RED
+Department^CORE_INFRA^SINGLE^Cyber^RED
+Department^CORE_INFRA^SINGLE^Hardware^RED
+Department^TECH_NON_DEV^SINGLE^Production Support^RED
+Department^TECH_NON_DEV^SINGLE^Project Manager^RED
+Department^TECH_NON_DEV^SINGLE^Business Analyst^RED
+Department^TECH_NON_DEV^SINGLE^Support^RED
+Department^GENERAL_DEVELOPMENT^SINGLE^Engineer^GREEN
+Department^GENERAL_DEVELOPMENT^SINGLE^Developer^GREEN
+Department^GENERAL_DEVELOPMENT^SINGLE^Development$$!Business Development$$!Learning^GREEN
+Department^GENERAL_DEVELOPMENT^SINGLE^Tech$$!Technical$$!Project$$!CTO^GREEN
+Department^GENERAL_DEVELOPMENT^SINGLE^IT$$!Credit^GREEN
+Department^ALL^SINGLE^Capital Markets^RED
+Department^UNKNOWN_Department^SINGLE^DEFAULT^GREY
+Sub Department^CASH_EQUITIES^SINGLE^Equities$$Cash^GREEN
+Sub Department^CASH_EQUITIES^SINGLE^Equity$$Cash^GREEN
+Sub Department^CASH_EQUITIES^SINGLE^Cash^GREEN
+Sub Department^CLEARED_DERIVS^SINGLE^Equities$$Synthetic^GREEN
+Sub Department^CLEARED_DERIVS^SINGLE^Equities$$Derivs^GREEN
+Sub Department^CLEARED_DERIVS^SINGLE^Equity$$Derivs^GREEN
+Sub Department^CLEARED_DERIVS^SINGLE^Equity$$Derivatives^GREEN
+Sub Department^EQUITY_ALGO^SINGLE^Equity$$Automation^GREEN
+Sub Department^CLEARED_DERIVS^SINGLE^Equity$$Algo^GREEN
+Sub Department^CLEARED_DERIVS^SINGLE^Equities$$Derivs^GREEN
+Sub Department^CLEARED_DERIVS^SINGLE^Equities$$Derivatives^GREEN
+Sub Department^CLEARED_DERIVS^SINGLE^Equities$$Automation^GREEN
+Sub Department^EQUITY_ALGO^SINGLE^Equities$$Algo^GREEN
+Sub Department^EQUITY_ALGO^SINGLE^Equity$$Electronic Trading^GREEN
+Sub Department^EQUITY_ALGO^SINGLE^Equities$$Electronic Trading^GREEN
+Sub Department^EQUITY_ALGO^SINGLE^Equity$$Strategist^GREEN
+Sub Department^EQUITY_ALGO^SINGLE^Algorithmic^GREEN
+Sub Department^EQUITY_OTHER^SINGLE^Equity$$Prime^AMBER
+Sub Department^EQUITY_OTHER^SINGLE^Equity$$Sales^AMBER
+Sub Department^EQUITY_OTHER^SINGLE^Equity$$Client^AMBER
+Sub Department^EQUITY_OTHER^SINGLE^Equity$$Private^AMBER
+Sub Department^EQUITY_OTHER^SINGLE^Equity$$Compliance^AMBER
+Sub Department^EQUITY_OTHER^SINGLE^Equity$$Finance^AMBER
+Sub Department^EQUITY_OTHER^SINGLE^Equity$$Indices^AMBER
+Sub Department^EQUITY_OTHER^SINGLE^Equity$$Reg^AMBER
+Sub Department^EQUITY_OTHER^SINGLE^Equity$$Market Data^AMBER
+Sub Department^EQUITY_OTHER^SINGLE^Equity$$Research^AMBER
+Sub Department^EQUITY_OTHER^SINGLE^Equities$$Prime^AMBER
+Sub Department^EQUITY_OTHER^SINGLE^Equities$$Sales^AMBER
+Sub Department^EQUITY_OTHER^SINGLE^Equities$$Client^AMBER
+Sub Department^EQUITY_OTHER^SINGLE^Equities$$Private^AMBER
+Sub Department^EQUITY_OTHER^SINGLE^Equities$$Compliance^AMBER
+Sub Department^EQUITY_OTHER^SINGLE^Equities$$Indices^AMBER
+Sub Department^EQUITY_OTHER^SINGLE^Equities$$Reg^AMBER
+Sub Department^EQUITY_OTHER^SINGLE^Equities$$Market Data^AMBER
+Sub Department^EQUITY_OTHER^SINGLE^Equities$$Research^AMBER
+Sub Department^EQUITY_OTHER^SINGLE^Equities$$Finance^AMBER
+Sub Department^ETF^SINGLE^ETF^GREEN
+Sub Department^ETF^SINGLE^Exchange traded^GREEN
+Sub Department^ETF^SINGLE^Passive^GREEN
+Sub Department^ETF^SINGLE^Synthetic^GREEN
+Sub Department^ETF^SINGLE^Index^GREEN
+Sub Department^ETF^SINGLE^Fund$$!Funding$$!Fundamental$$!ing$$!Pension$$!Hedge^GREEN
+Sub Department^ETF^SINGLE^One Delta^GREEN
+Sub Department^ETF^SINGLE^Portfolio^GREEN
+Sub Department^CLEARED_DERIVS^SINGLE^Futures^GREEN
+Sub Department^CLEARED_DERIVS^SINGLE^Options^GREEN
+Sub Department^CLEARED_DERIVS^SINGLE^Listed Deriv^GREEN
+Sub Department^CLEARED_DERIVS^SINGLE^Cleared Deriv^GREEN
+Sub Department^EQUITIES^SINGLE^Equities^GREEN
+Sub Department^EQUITIES^SINGLE^Equity^GREEN
+Sub Department^DELTA_ONE^SINGLE^Delta One^GREEN
+Sub Department^STIR^SINGLE^STIR^GREEN
+Sub Department^RATES^SINGLE^Rates^GREEN
+Sub Department^LOANS^SINGLE^Loans^GREEN
+Sub Department^LOANS^SINGLE^Loan^GREEN
+Sub Department^REPO^SINGLE^Repo^GREEN
+Sub Department^GAS_POWER^SINGLE^Gas$$Power^GREEN
+Sub Department^RETAIL^SINGLE^Retail^GREEN
+Sub Department^WEALTH^SINGLE^Wealth^GREEN
+Sub Department^BONDS^SINGLE^Bonds^GREEN
+Sub Department^BONDS^SINGLE^Bond^GREEN
+Sub Department^FIXED_INCOME^SINGLE^Fixed Income^GREEN
+Sub Department^TREASURY^SINGLE^Treasury^GREEN
+Sub Department^FX^SINGLE^FX^GREEN
+Sub Department^COMMODITIES^SINGLE^Commodities^GREEN
+Sub Department^CREDIT^SINGLE^Credit^GREEN
+Sub Department^TRADING^SINGLE^Trading^GREEN
+Sub Department^UNKNOWN_Sub Department^SINGLE^DEFAULT^GREY
+Job Type^TECH^SINGLE^CIO^GREEN
+Job Type^TECH^SINGLE^CTO$$!Director$$!Instructor$$!Contractor$$!Sector$$!Doctor^GREEN
+Job Type^TECH^SINGLE^Chief Information Officer^GREEN
+Job Type^TECH^SINGLE^Chief Technology Officer^GREEN
+Job Type^TECH^SINGLE^Head of$$Tech^GREEN
+Job Type^TECH^SINGLE^Head of$$Application^GREEN
+Job Type^TECH^SINGLE^Developer$$!Recruiter^GREEN
+Job Type^TECH^SINGLE^Chief Digital Officer^AMBER
+Job Type^TECH^SINGLE^Architect$$!Data$$!Operations^GREEN
+Job Type^TECH^SINGLE^UX^AMBER
+Job Type^TECH^SINGLE^UI$$!Equity$$!Equipment$$!Equities^GREEN
+Job Type^TECH^SINGLE^Software^GREEN
+Job Type^TECH^SINGLE^Development$$!Business Development$$!Learning^GREEN
+Job Type^TECH^SINGLE^Engineer$$!Data$$!Operations^GREEN
+Job Type^TECH^SINGLE^Technology$$!Business Manager$$!Business Analysis$$!Investment^AMBER
+Job Type^TECH^SINGLE^IT $$!Credit^AMBER
+Job Type^TECH^SINGLE^ IT$$!Credit^AMBER
+Job Type^TECH^SINGLE^(IT)$$!Credit^AMBER
+Job Type^TECH^SINGLE^-IT$$!Credit^AMBER
+Job Type^TECH^SINGLE^IT$$!Credit^AMBER
+Job Type^TECH^SINGLE^system^AMBER
+Job Type^TECH^SINGLE^platform$$!Support^AMBER
+Job Type^TECH^SINGLE^Tech$$!Business Manager^AMBER
+Job Type^TECH_OTHER^SINGLE^Data^AMBER
+Job Type^TECH_OTHER^SINGLE^Strategy^RED
+Job Type^TECH_OTHER^SINGLE^Business Analyst^RED
+Job Type^TECH_OTHER^SINGLE^Business Analysis^RED
+Job Type^TECH_OTHER^SINGLE^Business Manager^RED
+Job Type^TECH_OTHER^SINGLE^Solutions^RED
+Job Type^TECH_OTHER^SINGLE^Cloud^RED
+Job Type^TECH_OTHER^SINGLE^Infrastructure^RED
+Job Type^TECH_OTHER^SINGLE^Quality Assurance^RED
+Job Type^TECH_OTHER^SINGLE^QA^RED
+Job Type^TECH_OTHER^SINGLE^Delivery^RED
+Job Type^TECH_OTHER^SINGLE^Product^RED
+Job Type^TECH_OTHER^SINGLE^Consultant^RED
+Job Type^TECH_OTHER^SINGLE^Infrastructure^RED
+Job Type^TECH_OTHER^SINGLE^FIX^RED
+Job Type^TECH_OTHER^SINGLE^FIX Connectivity^RED
+Job Type^TECH_OTHER^SINGLE^Quality Assurance^RED
+Job Type^TECH_OTHER^SINGLE^QA^RED
+Job Type^TECH_OTHER^SINGLE^Delivery^RED
+Job Type^TECH_OTHER^SINGLE^Operation^RED
+Job Type^TECH_OTHER^SINGLE^Project^RED
+Job Type^TECH_OTHER^SINGLE^Controller^RED
+Job Type^TECH_OTHER^SINGLE^Cyber^RED
+Job Type^TECH_OTHER^SINGLE^Security^RED
+Job Type^TECH_OTHER^SINGLE^Support^RED
+Job Type^TECH_OTHER^SINGLE^System^RED
+Job Type^TECH_OTHER^SINGLE^Project Manager^RED
+Job Type^NON_FIN^SINGLE^Sourcer^RED
+Job Type^NON_FIN^SINGLE^Recruiter^RED
+Job Type^NON_FIN^SINGLE^Recruiting^RED
+Job Type^NON_FIN^SINGLE^Payment^RED
+Job Type^NON_FIN^SINGLE^Therapist^RED
+Job Type^NON_FIN^SINGLE^Dentist^RED
+Job Type^NON_FIN^SINGLE^Teacher^RED
+Job Type^NON_FIN^SINGLE^Candidate^RED
+Job Type^NON_FIN^SINGLE^Psych^RED
+Job Type^NON_FIN^SINGLE^Professor^RED
+Job Type^NON_FIN^SINGLE^Relationship^RED
+Job Type^NON_FIN^SINGLE^Cardiology^RED
+Job Type^NON_FIN^SINGLE^Procurement^RED
+Job Type^NON_FIN^SINGLE^Admin^RED
+Job Type^NON_FIN^SINGLE^Co-ordinator^RED
+Job Type^NON_FIN^SINGLE^Owner^RED
+Job Type^NON_FIN^SINGLE^Marketing^RED
+Job Type^NON_FIN^SINGLE^Account Executive^RED
+Job Type^NON_FIN^SINGLE^Retired^RED
+Job Type^NON_FIN^SINGLE^Human^RED
+Job Type^NON_FIN^SINGLE^Law^RED
+Job Type^NON_FIN^SINGLE^Legal^RED
+Job Type^NON_FIN^SINGLE^Speaker^RED
+Job Type^NON_FIN^SINGLE^Talent^RED
+Job Type^NON_FIN^SINGLE^Real Estate^RED
+Job Type^NON_FIN^SINGLE^Financial Advisor^RED
+Job Type^NON_FIN^SINGLE^Sales Executive^RED
+Job Type^NON_FIN^SINGLE^Financial^RED
+Job Type^NON_FIN^SINGLE^Finance^RED
+Job Type^NON_FIN^SINGLE^Support^RED
+Job Type^NON_FIN^SINGLE^Police^RED
+Job Type^NON_FIN^SINGLE^Account^RED
+Job Type^NON_FIN^SINGLE^Customer^RED
+Job Type^NON_FIN^SINGLE^Medical^RED
+Job Type^NON_FIN^SINGLE^Accounts^RED
+Job Type^NON_FIN^SINGLE^Sales Officer^RED
+Job Type^NON_FIN^SINGLE^Sales Manager^RED
+Job Type^NON_FIN^SINGLE^Sales Leader^RED
+Job Type^NON_FIN^SINGLE^Regional Sales Director^RED
+Job Type^NON_FIN^SINGLE^Retired^RED
+Job Type^BUSINESS^SINGLE^Chief Compliance Officer^RED
+Job Type^BUSINESS^SINGLE^Chief Executive Officer^RED
+Job Type^BUSINESS^SINGLE^Chief Operating Officer^RED
+Job Type^BUSINESS^SINGLE^Chief Investment Officer^RED
+Job Type^BUSINESS^SINGLE^Chief Commercial Officer^RED
+Job Type^BUSINESS^SINGLE^COO$$!Coordinator^RED
+Job Type^BUSINESS^SINGLE^Global CEO^RED
+Job Type^BUSINESS^SINGLE^Credit^RED
+Job Type^BUSINESS^SINGLE^Audit^RED
+Job Type^BUSINESS^SINGLE^Investment^RED
+Job Type^BUSINESS^SINGLE^Risk Manager^RED
+Job Type^BUSINESS^SINGLE^Credit Risk^RED
+Job Type^BUSINESS^SINGLE^Counsel^RED
+Job Type^BUSINESS^SINGLE^Compliance Officer^RED
+Job Type^BUSINESS^SINGLE^Corporate Treasury^RED
+Job Type^NON_FIN^SINGLE^Speaker^RED
+Job Type^BUSINESS^SINGLE^CEO^RED
+Job Type^BUSINESS^SINGLE^CFO^RED
+Job Type^BUSINESS^SINGLE^President^RED
+Job Type^BUSINESS^SINGLE^Financial Advisor^RED
+Job Type^BUSINESS^SINGLE^Business^RED
+Job Type^BUSINESS^SINGLE^Principal^RED
+Job Type^BUSINESS^SINGLE^Founder^RED
+Job Type^BUSINESS^SINGLE^Chief Revenue Officer^RED
+Job Type^BUSINESS^SINGLE^Client^RED
+Job Type^BUSINESS^SINGLE^Account^RED
+Job Type^BUSINESS^SINGLE^Advisor^RED
+Job Type^BUSINESS^SINGLE^Partner^RED
+Job Type^BUSINESS^SINGLE^Partnership^RED
+Job Type^BUSINESS^SINGLE^Portfolio^RED
+Job Type^BUSINESS^SINGLE^Wealth^RED
+Job Type^BUSINESS^SINGLE^Research^RED
+Job Type^BUSINESS^SINGLE^Trading^RED
+Job Type^BUSINESS^SINGLE^Trader^RED
+Job Type^BUSINESS^SINGLE^Business Development^RED
+Job Type^BUSINESS^SINGLE^Business Development Manager^RED
+Job Type^BUSINESS^SINGLE^trader^RED
+Job Type^BUSINESS^SINGLE^Quant^RED
+Job Type^BUSINESS^SINGLE^Sales^RED
+Job Type^BUSINESS^SINGLE^Executive^RED
+Job Type^BUSINESS^SINGLE^Board Member^RED
+Job Type^BUSINESS^SINGLE^Member of the Board of Directors^RED
+Job Type^BUSINESS^SINGLE^Founder & CEO^RED
+Job Type^UNKNOWN_Job Type^SINGLE^DEFAULT^RED
