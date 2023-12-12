@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 cd /home/burtnolej/sambashare/veloxmon/capsulecrm
 . ~/.bashrc
@@ -18,4 +18,4 @@ export DIRDATAFILES=$DIRWEB/datafiles
 logname=/tmp/${0##*/}.$NOW.log
 outputpath=/var/www/html/datafiles
 
-python ./py/capsule_join_entity.py persistfile="$DIRCAPSULEPICKLE/join.pickle" pickle_dir="$DIRCAPSULEPICKLE"
+python ./py/capsule_dump_pickle.py entity="organisation" pickle_dir=$DIRDATAFILES myid="244247959"

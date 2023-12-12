@@ -1,5 +1,5 @@
-python ./py/capsule_parse_jobtitle.py rulesfile=jobtitlerules.csv personsfile=./csv/person.csv clientsf
-ile=./csv/organisation.csv mode=recover outputtype=list query='[("SENIORITY","SENIOR"),("SUBDEPTTYPE","
-LISTED_DERIVS")]'  query2='[("SENIORITY","SENIOR"),("SUBDEPTTYPE","FUTURES")]'
 
-exit
+python ./py/capsule_parse_jobtitle.py  \
+	rulesfile=./csv/jobtitlerules.csv \
+       	personsfile=/var/www/html/datafiles/person.csv \
+	clientsfile=/var/www/html/datafiles/organisation.csv

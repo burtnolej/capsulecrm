@@ -1,0 +1,88 @@
+
+raw_ample_headers="email^first_name^last_name^title^linkedin^company_name^company_domain^company_email_domain^company_linkedin^country^state^city^location^industry^company_size^email_status^recent_position_change^tenure_at_company^tenure_at_position"
+
+def get_ample_export(amplefile):
+    _ample_headers = raw_ample_headers.split("^")
+    ampleexport=[]
+    fh = open(amplefile,"r+")
+    for line in fh:
+        _ample = {}
+        _ample_row=line.split("^")
+        for i in range(0,len(_ample_headers)):
+            _ample[_ample_headers[i]]=_ample_row[i]
+
+        ampleexport.append(_ample)
+    fh.close()
+    return ampleexport
+
+def get_num_words(sentence,num_words):
+    if num_words==0:
+        return sentence
+    _sentence=sentence.split(" ")
+    return " ".join(_sentence[:num_words])
+
+def get_company_mapping(mappingfile,num_words=0):
+    mapping={}
+    fh = open(mappingfile,"r+")
+    linecount=0
+    for line in fh:
+        _mapping = line.split("^")
+        mapping[get_num_words(_mapping[0],num_words)]=_mapping[1].strip()
+    fh.close()
+    return mapping
+
+def match_companyname(mapping,companyname,num_words=0):
+    if mapping.has_key(get_num_words(companyname,num_words))==True:
+        return True
+    return False
+
+def _store(d,_company_name,_liurl):
+    if d.has_key(_company_name)==False:
+        d[_company_name] = [_liurl]
+    else:
+        d[_company_name].append(_liurl)
+
+ampleexport = get_ample_export("/home/burtnolej/sambashare/veloxmon/capsulecrm/csv/ample_export.csv")
+
+stats = {"index":{},"runs":{"0":0,"1":0,"2":0}}
+
+matchtype=[0,3,2,1]
+
+unmatched={}
+matched={}
+for i in range(0,len(matchtype)):
+    _matchtype=str(matchtype[i])
+    mapping = get_company_mapping("/home/burtnolej/sambashare/veloxmon/capsulecrm/csv/company_name_mapper.csv",int(_matchtype))
+
+    testcount=0
+    for i in range(1,len(ampleexport)):
+        _company_name=ampleexport[i]["company_name"]
+        _liurl=ampleexport[i]["linkedin"]
+        if stats["index"].has_key(_liurl) == False:
+            stats["index"][_liurl]={"matched":False}
+        elif stats["index"][_liurl]["matched"]==True:
+            continue
+
+        _matchresult = match_companyname(mapping,_company_name,int(_matchtype))
+        if _matchresult == True:
+            stats["index"][_liurl][_matchtype]=True
+            stats["index"][_liurl]["matched"]=True
+            if unmatched.has_key(_company_name)==True:
+                unmatched.pop(_company_name)
+
+            _store(matched,_company_name,_liurl)
+        else:
+            stats["index"][_liurl][_matchtype]=False
+            _store(unmatched,_company_name,_liurl)
+
+        testcount=testcount+1
+
+    stats["runs"][_matchtype]=(testcount, str(len([key for key in stats["index"].keys() if stats["index"][key]["matched"]==True])))
+
+print stats["runs"]
+print len(unmatched.keys())
+print matched.keys()
+
+for _key in matched.keys():
+    print matched[_key]
+    print _key,",".join([_match["company_name"] for _match in matched[_key]])

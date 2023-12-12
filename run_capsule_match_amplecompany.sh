@@ -1,10 +1,5 @@
+#!/bin/bash
 
-
-cd /home/burtnolej/sambashare/veloxmon/capsulecrm
-. ~/.bashrc
-
-TODAY=`date +%Y%m%d`
-NOW=`date +%Y%m%d`
 
 export DIRCAPSULE=$HOME/sambashare/veloxmon/capsulecrm
 export DIRCAPSULEPY=$DIRCAPSULE/py
@@ -15,7 +10,5 @@ export DIRCAPSULEPICKLEINDEX=$DIRCAPSULE/pickle_indexes
 export DIRWEB=/var/www/html
 export DIRDATAFILES=$DIRWEB/datafiles
 
-logname=/tmp/${0##*/}.$NOW.log
-outputpath=/var/www/html/datafiles
+python $DIRCAPSULEPY/capsule_companyname_mapper.py persistfile="$DIRCAPSULEPICKLE/ampleexport.pickle" pickle_dir=$DIRCAPSULEPICKLE outputfile="$DIRCAPSULECSV/matchedampleexport.csv"
 
-python ./py/capsule_join_entity.py persistfile="$DIRCAPSULEPICKLE/join.pickle" pickle_dir="$DIRCAPSULEPICKLE"

@@ -18,10 +18,10 @@ export DIRDATAFILES=$DIRWEB/datafiles
 logname=/tmp/${0##*/}.$NOW.log
 outputpath=/var/www/html/datafiles
 
-#entities=("person")
-entities=("person" "join")
+#entities=("opportunities")
+#entities=("person" "join")
 
-#entities=("organisation" "entries" "opportunities" "person" )
+entities=("organisation" "entries" "opportunities" "person" "join" )
 outputtype="list"
 outputfields="model"
 

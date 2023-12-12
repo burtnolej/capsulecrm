@@ -1,0 +1,59 @@
+id,jobtitle,SENIORITY,DEPTTYPE,SUBDEPTTYPE,JOBTYPE
+Michael^Loggia^mloggia@virtu.com^56^sffdf^Virtu^Global Head of Workflow Technology^TECH^UNKNOWN^SENIOR^GENERAL_DEVELOPMENT^UNKNOWN^UNKNOWN
+Salvo^Gula^salvo.gula@ubs.com^54^sffdf^UBS^Executive Director - Cash Equities Sales Trading^BUSINESS^CASH_EQUITIES^MID_LEVEL^LEADERSHIP^UNKNOWN^UNKNOWN
+Malavika^Shanker^malavika.shanker@morganstanley.com^42^sffdf^Morgan Stanley^Managing Director, Head of India Equities^UNKNOWN^EQUITIES^SENIOR^LEADERSHIP^UNKNOWN^UNKNOWN
+Cedric^Bouche^cedric.bouche@sgcib.com^48^sffdf^Soc Gen^Program Director - Cash Equity Execution^UNKNOWN^CASH_EQUITIES^MID_LEVEL^FRONT_OFFICE^UNKNOWN^UNKNOWN
+Doron^Barness^doron.barness@opco.com^43^sffdf^Oppenheimer^Managing Director - Global Head of Trading and Cash Equities Distribution^BUSINESS^CASH_EQUITIES^SENIOR^LEADERSHIP^UNKNOWN^UNKNOWN
+Daniel^Ferremi^daniel.ferremi@societegenerale.co.uk^49^sffdf^Soc Gen^Director, Manager of Prime Services Pre-Trade Technology^TECH^UNKNOWN^MID_LEVEL^GENERAL_DEVELOPMENT^UNKNOWN^UNKNOWN
+Stanley^Yu^stanley.yu@ubs.com^52^sffdf^UBS^Executive Director, Wealth Management IT^TECH^WEALTH^MID_LEVEL^LEADERSHIP^UNKNOWN^UNKNOWN
+Srichakri^Adhikarapatti^srichakri.adhikarapatti@ubs.com^53^sffdf^UBS^Managing Director, Global Head of FX and Cash Equities Principal Quant Trading^BUSINESS^CASH_EQUITIES^SENIOR^LEADERSHIP^UNKNOWN^UNKNOWN
+Assunta^Gaglione-Austin^assunta@fortress.com^24^sffdf^Fortress Investment^Chief Technology Officer^TECH^UNKNOWN^CSUITE^LEADERSHIP^UNKNOWN^UNKNOWN
+John^Talintyre^john.talintyre@gs.com^25^sffdf^Goldman Sachs^Executive Director^BUSINESS^UNKNOWN^MID_LEVEL^LEADERSHIP^UNKNOWN^UNKNOWN
+Ashoke^Sharma^ashoke.sharma@gs.com^26^sffdf^Goldman Sachs^Managing Director^UNKNOWN^UNKNOWN^SENIOR^LEADERSHIP^UNKNOWN^UNKNOWN
+Henry^Chan^henry.c@fi.gs.com^27^sffdf^Goldman Sachs^Executive Director - Equities Trading Technology ^TECH^EQUITIES^MID_LEVEL^LEADERSHIP^UNKNOWN^UNKNOWN
+Amanda^Walter^amanda.walter@credit-suisse.com^20^sffdf^Credit Suisse^Director - US Cash Equities COO^BUSINESS^CASH_EQUITIES^CSUITE^LEADERSHIP^UNKNOWN^UNKNOWN
+Tony^Pang^tonypangyk@dbs.com^21^sffdf^DBS Bank^Executive Director - Group Technology Risk^TECH^UNKNOWN^MID_LEVEL^LEADERSHIP^UNKNOWN^UNKNOWN
+Phil^Dauber^pdauber@elevationsecurities.com^22^sffdf^Elevation Capital^Managing Director^UNKNOWN^UNKNOWN^SENIOR^LEADERSHIP^UNKNOWN^UNKNOWN
+Jean^Echaroux^jean-pierre.echaroux@exane.com^23^sffdf^Exane^Head of IT for Equity Derivatives^TECH^CLEARED_DERIVS^SENIOR^LEADERSHIP^UNKNOWN^UNKNOWN
+Victor^Cortes^victor.cortes@santander.co.uk^46^sffdf^Santander ^Head of Cash Equities - UK & Asia^UNKNOWN^CASH_EQUITIES^SENIOR^FRONT_OFFICE^UNKNOWN^UNKNOWN
+Vincent^Berardo^vincent.berardo@socgen.com^47^sffdf^Soc Gen^Head of Technology for Equities and Equity Derivatives, Execution and Client Connectivity, AsiaPac^TECH^CLEARED_DERIVS^SENIOR^GENERAL_DEVELOPMENT^UNKNOWN^UNKNOWN
+Larry^Chan^larry.cc.chan@prudential.com.hk^44^sffdf^Prudential Financial^Senior Director of Technology & Product^TECH^UNKNOWN^SENIOR^GENERAL_DEVELOPMENT^UNKNOWN^UNKNOWN
+Pedro^Balcão-Reis^pedro.balcaoreis@santander.com^45^sffdf^Santander ^Managing Director, Head of Cash Equities US^UNKNOWN^CASH_EQUITIES^SENIOR^LEADERSHIP^UNKNOWN^UNKNOWN
+John^Ritter^john.ritter@guggenheimpartners.com^28^sffdf^Guggenheim Partners^Director^UNKNOWN^UNKNOWN^MID_LEVEL^UNKNOWN^UNKNOWN^UNKNOWN
+Behzad^Kolah^behzad.kolah@hsbc.com^29^sffdf^HSBC^Head of Equities Middle Office Technology^TECH^EQUITIES^SENIOR^FRONT_OFFICE^UNKNOWN^UNKNOWN
+Bruce^Smith^bruce.smith@morganstanley.com^40^sffdf^Morgan Stanley^Executive Director, Real-Time Market Data, Institutional Securities Technology^TECH^UNKNOWN^MID_LEVEL^LEADERSHIP^UNKNOWN^UNKNOWN
+Daniel^Wheeler^dan.wheeler@morganstanley.com^41^sffdf^Morgan Stanley^Executive Director Institutional Equities^BUSINESS^EQUITIES^MID_LEVEL^LEADERSHIP^UNKNOWN^UNKNOWN
+Sergey^Khoroshevski^sergey.khoroshevski@bofa.com^1^sffdf^Bank of America Merrill Lynch^Director, Senior Technology Manager, Cash Equities Trading Technology^TECH^CASH_EQUITIES^MID_LEVEL^FRONT_OFFICE^UNKNOWN^UNKNOWN
+Steffen^Nissen^steffen.nissen@barclays.com^3^sffdf^Barclays^Director | Software Engineering Manager^TECH^UNKNOWN^MID_LEVEL^GENERAL_DEVELOPMENT^UNKNOWN^UNKNOWN
+Jignesh^Mulani^jignesh.mulani@bofa.com^2^sffdf^Bank of America Merrill Lynch^Director, Technical Solution Delivery lead^TECH^UNKNOWN^MID_LEVEL^UNKNOWN^UNKNOWN^UNKNOWN
+Andrew^Lockwood^andrew.lockwood@barclays.com^5^sffdf^Barclays^Vice President, Cash Equities Technology^TECH^CASH_EQUITIES^CSUITE^LEADERSHIP^UNKNOWN^UNKNOWN
+Simon^Pattinson^simon.pattinson@barclays.com^4^sffdf^Barclays^Managing Director, CFO Group Technology^TECH^UNKNOWN^CSUITE^LEADERSHIP^UNKNOWN^UNKNOWN
+Linda^Zhang^lzhang@barclays.com^7^sffdf^Barclays^Director, Head of Data Strategy - Markets Technology^TECH^UNKNOWN^SENIOR^FRONT_OFFICE^UNKNOWN^UNKNOWN
+Susan^Spillane^susan.spillane@barclays.com^6^sffdf^Barclays^Director, Markets Technology^TECH^UNKNOWN^MID_LEVEL^GENERAL_DEVELOPMENT^UNKNOWN^UNKNOWN
+David^Leschied^david.leschied@bmo.com^9^sffdf^BMO Capital Markets^Director Electronic Trading, Head of Canadian Equity Product & Platform^TECH_OTHER^EQUITY_ALGO^SENIOR^FRONT_OFFICE^UNKNOWN^UNKNOWN
+Luc^Auster^luc.auster@bbva.com^8^sffdf^BBVA^Program Director for Digital Derivatives, Equities Finance & Delta 1 Technology^TECH^CLEARED_DERIVS^MID_LEVEL^FRONT_OFFICE^UNKNOWN^UNKNOWN
+Ashok^Kalyanswamy^ashok.kalyanswamy@twosigma.com^51^sffdf^Two Sigma^Managing Director^UNKNOWN^UNKNOWN^SENIOR^LEADERSHIP^UNKNOWN^UNKNOWN
+Jay^Bhatt^jay.bhatt@morganstanley.com^39^sffdf^Morgan Stanley^Executive Director^BUSINESS^UNKNOWN^MID_LEVEL^LEADERSHIP^UNKNOWN^UNKNOWN
+Maria^Bocker^maria.bocker@morganstanley.com^38^sffdf^Morgan Stanley^Executive Director - Reliability and Production Engineering ^TECH^UNKNOWN^MID_LEVEL^LEADERSHIP^UNKNOWN^UNKNOWN
+Steve^Wall^steve.wall@westpac.com.au^58^sffdf^Westpac^Head of Financial Markets Technology^TECH^UNKNOWN^SENIOR^GENERAL_DEVELOPMENT^UNKNOWN^UNKNOWN
+Matthew^Smyth^matthew.smyth@bnpparibas.com^11^sffdf^BNP Paribas^US Head Cash Equities Markets Technology^TECH^CASH_EQUITIES^SENIOR^FRONT_OFFICE^UNKNOWN^UNKNOWN
+Yogesh^Chandwadkar^yogesh.chandwadkar@bnpparibas.com^10^sffdf^BNP Paribas^Head of Japan Global Markets Front Office IT^TECH^UNKNOWN^SENIOR^GENERAL_DEVELOPMENT^UNKNOWN^UNKNOWN
+Srivalli^Marti^srivalli.marti@cibccm.com^13^sffdf^CIBC^Director , Capital Markets Technology ^TECH^UNKNOWN^MID_LEVEL^GENERAL_DEVELOPMENT^UNKNOWN^UNKNOWN
+Tabraiz^Wadood^tabraiz.wadood@cibccm.com^12^sffdf^CIBC^Sr Director - Equity Markets  Technology^TECH^EQUITIES^MID_LEVEL^FRONT_OFFICE^UNKNOWN^UNKNOWN
+Ashar^Khan^ashar.khan@citigroup.com^15^sffdf^Citi^Head of Engineering - Prime Services Technology ^TECH^UNKNOWN^SENIOR^GENERAL_DEVELOPMENT^UNKNOWN^UNKNOWN
+Scott^Hughes^scott.hughes@cibccm.com^14^sffdf^CIBC^Executive Director CIBC Cash Equities^BUSINESS^CASH_EQUITIES^MID_LEVEL^LEADERSHIP^UNKNOWN^UNKNOWN
+David^Lawton^david.lawton@credit-suisse.com^17^sffdf^Credit Suisse^Director | Head of APAC Market Intelligence | Equities IT^TECH^EQUITIES^SENIOR^FRONT_OFFICE^UNKNOWN^UNKNOWN
+Karthik^Madhyanapu^karthik.madhyanapu@citi.com^16^sffdf^Citi^Director - Head of NAM Equity Derivatives and Delta 1 Technology^TECH^CLEARED_DERIVS^SENIOR^FRONT_OFFICE^UNKNOWN^UNKNOWN
+Saurabh^Misra^saurabh.misra@credit-suisse.com^19^sffdf^Credit Suisse^Director^UNKNOWN^UNKNOWN^MID_LEVEL^UNKNOWN^UNKNOWN^UNKNOWN
+Atul^Ashar^atul.ashar@credit-suisse.com^18^sffdf^Credit Suisse^Global Equities Architect^TECH^EQUITIES^UNKNOWN^FRONT_OFFICE^UNKNOWN^UNKNOWN
+Fawad^Karim^fawad.karim@jpmorgan.com^31^sffdf^J.P. Morgan^Executive Director^BUSINESS^UNKNOWN^MID_LEVEL^LEADERSHIP^UNKNOWN^UNKNOWN
+Daniel^Stahljans^daniel.stahljans@investec.com^30^sffdf^Investec^Head of HT Cash Equities Trading South Africa^BUSINESS^CASH_EQUITIES^SENIOR^FRONT_OFFICE^UNKNOWN^UNKNOWN
+Shiv^Kumar^shiv.kumar@macquarie.com^37^sffdf^Macquarie Group^Managing Director, Global Head of Flow Markets (Equities, FX and Listed Derivatives) Technology^TECH^CLEARED_DERIVS^SENIOR^LEADERSHIP^UNKNOWN^UNKNOWN
+Jeff^Voigt^jvoigt@macquarie.com.au^36^sffdf^Macquarie Group^Head of Finance Technology (Commodities and Global Markets)^TECH^COMMODITIES^SENIOR^FEDERATION^UNKNOWN^UNKNOWN
+Roger^Beardsworth^roger.beardsworth@chase.com^35^sffdf^J.P. Morgan^VP Macro eTrading technology^BUSINESS^TRADING^MID_LEVEL^FRONT_OFFICE^UNKNOWN^UNKNOWN
+Marcus^Kwan^marcus.kwan@chase.com^34^sffdf^J.P. Morgan^Executive Director, APAC Prime Finance Technology^TECH^UNKNOWN^MID_LEVEL^LEADERSHIP^UNKNOWN^UNKNOWN
+Dennis^Martin^dennis.martin@jpmorgan.com^33^sffdf^J.P. Morgan^Senior Director of Software Engineering, Developer Experience Engineering for CIB Technology^TECH^UNKNOWN^SENIOR^GENERAL_DEVELOPMENT^UNKNOWN^UNKNOWN
+Michael^Banham^michael.banham@ubs.com^55^sffdf^UBS^Executive Director^BUSINESS^UNKNOWN^MID_LEVEL^LEADERSHIP^UNKNOWN^UNKNOWN
+Daniel^Clayden^daniel.clayden@jpmorgan.com^32^sffdf^J.P. Morgan^Executive Director^BUSINESS^UNKNOWN^MID_LEVEL^LEADERSHIP^UNKNOWN^UNKNOWN
+Loveleen^Malhotra^loveleen.malhotra@wellsfargo.com^57^sffdf^Wells Fargo^Head of Equities and Prime Technology^TECH^EQUITY_OTHER^SENIOR^FRONT_OFFICE^UNKNOWN^UNKNOWN
+Jacky^Wong^jacky.wong@sc.com^50^sffdf^Standard Chartered Bank^Head, Equities Development^TECH^EQUITIES^SENIOR^FRONT_OFFICE^UNKNOWN^UNKNOWN

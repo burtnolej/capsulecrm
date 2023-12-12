@@ -11,8 +11,13 @@ for cfg in sys.argv[1:]:
         if v in ["False","false"]: v =False
         locals()[k] = v
 
+def _get_set(summary,term):
+        category=term[0]
+        value=term[1]
+        return set(summary[category][value])
 
 def _get_client_meta(client_name,clients):
+#ClientSource=INITIAL;LinkedInFirm=INITIAL;
 
         client_type = "UNKNOWN"
         full_client_name = "UNKNOWN"
@@ -41,6 +46,41 @@ def _get_person_meta(results,_id):
 
         return result
 
+def print_summary_query(summary,all_terms,outputtype,results,clients):
+
+        superset=set()
+        for terms in all_terms:
+                term =ast.literal_eval(terms)
+
+        set1=_get_set(summary,term[0])
+
+        if len(all_terms)==1:
+                superset=set1
+        else:
+                nextset=[]
+                for _term in term[1:]:
+                        nextset=_get_set(summary,_term)
+                        nextset=list(set1.intersection(nextset))
+                superset=superset.union(nextset)
+
+        if outputtype=="count":
+                print len(superset)
+        elif outputtype=="list":
+                fh = open(queryoutputfile,"w")
+
+                for _id in superset:
+                        (client_type,_) = _get_client_meta(results[_id]["organization"],clients)
+                        _output = _get_person_meta(results,_id)
+                        _output.append(client_type)
+                        fh.write("^".join(_output)+"\n")
+                fh.close()
+
+
+def print_summary(summary):
+
+        for category in summary.keys():
+                for value in summary[category].keys():
+                        print category,value,len(summary[category][value])
 
 def print_results(persons,clients):
         fh = open(outputfile,"w")
@@ -53,6 +93,46 @@ def print_results(persons,clients):
                 _output.append(full_client_name)
                 fh.write("^".join(_output)+"\n")
         fh.close
+
+def print_stats(persons):
+        from collections import Counter
+        stats = {"SENIORITY":[],"DEPTTYPE":[],"SUBDEPTTYPE":[],"JOBTYPE":[]}
+        jobtitles=[]
+        ids=[]
+        for id in persons.keys():
+                person = persons[id]
+                results = person["results"]
+                for category in ["SENIORITY","DEPTTYPE","SUBDEPTTYPE","JOBTYPE"]:
+                        stats[category].append(results[category])
+                jobtitles.append(person["jobtitle"])
+                ids.append(id)
+
+
+        for category in ["SENIORITY","DEPTTYPE","SUBDEPTTYPE","JOBTYPE"]:
+                print Counter(stats[category])
+
+        for _category in stats.keys():
+                jobtitles_unk=[]
+                ids_unk=[]
+                for i in range(0,len(stats[_category])):
+                        if stats[_category][i] == "UNKNOWN_"+_category:
+                                jobtitles_unk.append(jobtitles[i])
+                                ids_unk.append(ids[i])
+
+                x = Counter(jobtitles_unk)
+                itemcount=0
+                for i in range(0,100):
+                        _output=[]
+                        _output.append(_category)
+                        _output.append("")
+                        _output.append("")
+                        _output.append(x.most_common()[i][0])
+                        _output.append(str(x.most_common()[i][1]))
+                        print "^".join(_output)
+                        itemcount=itemcount+x.most_common()[i][1]
+                print itemcount
+
+
 
 def get_rulesets(rulesfile):
         rulesets={}
@@ -142,6 +222,12 @@ def _update_summary(summary,value,_id):
                 summary[category][value] = [_id]
         return summary
 
+def _update_results(person_results,ruleset,jobtitle,rule,category,value):
+        if DEBUG!=False:
+                print ruleset + ":" + jobtitle + " MATCH [" + ",".join(rule)+"]"
+        person_results[category]=value
+        return person_results
+
 t1 = datetime.datetime.now()
 numtests=0
 
@@ -220,6 +306,7 @@ if mode!="recover":
 
                                 numtests=numtests+1
                                 if match==1:
+                                        #_update_results(person_results,_ruleset,_jobtitle,_rule,category,"UNKNOWN_"+category)
                                         if DEBUG!=False:
                                                 print _ruleset + ":" + _jobtitle + " MATCH [" + ",".join(_rule)+"]"
                                         person_results[category]=value
@@ -227,8 +314,10 @@ if mode!="recover":
                                         break
 
                         if match==0:
+                                #_update_results(person_results,_ruleset,_jobtitle,_rule,category,"UNKNOWN_"+category)
                                 if DEBUG!=False:
                                         print _ruleset + ":" + _jobtitle + " NOMATCH [" + ",".join(_rule)+"]"
+                                #person_results[category]="UNKNOWN_"+category
                                 person_results[category]="UNKNOWN"
                                 _update_summary(summary,value,_id)
                         else:
@@ -256,6 +345,11 @@ t2 = datetime.datetime.now()
 delta = t2-t1
 sys.stderr.write("number of tests performed: " + str(numtests) + " in " +str(delta) + "secs\n")
 
+if printstats==True:
+        print_stats(results)
+
+if query!=[]:
+        print_summary_query(summary,query,outputtype,results,clients)
 
 if mode=="persist":
         import pickle
@@ -263,3 +357,9 @@ if mode=="persist":
                 pickle.dump(summary, f, pickle.HIGHEST_PROTOCOL)
         with open('results.pickle', 'wb') as f:
                 pickle.dump(results, f, pickle.HIGHEST_PROTOCOL)
+
+if echo ==True:
+        with open(queryoutputfile,"r+") as f:
+                for _line in f:
+                        for _field in _line.split(","):
+                                print _field.ljust(26),
