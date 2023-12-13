@@ -7,8 +7,6 @@ _args = process_args(sys.argv,["entity"])
 for _arg in _args:
     locals()[_arg] = _args[_arg]
 
-print locals()
-
 entities = recover(entity,pickledir=dircapsulepickle)
 
 errors=[]
@@ -157,6 +155,7 @@ for _entity in entities:
 if outputtype=="table":
     _print_table(t)
 elif outputtype=="list":
+    print "writing rows  " + str(len(_output)) + " to " + outputfile
     fh =open(outputfile,"w+")
     fh.write("^".join(_columns)+"\n")
     for _outputrow in _output:
