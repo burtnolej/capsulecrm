@@ -5,7 +5,7 @@ if [ "$#" -ne 3 ]; then
     exit
 fi
 
-if [ $1 == "" ]; then
+if [ "$1" == "" ]; then
         echo "please provide commit message"
 	exit
 fi
@@ -40,6 +40,7 @@ if [ "${num_changes}" -eq 0 ] && [ "${num_adds}" -eq 0 ]; then
 fi
 
 if [ $3 != "test" ]; then
+	git commit -m "$1"
 	git diff HEAD  --name-only
 	eval "$(ssh-agent -s)"
 	ssh-add ~/.ssh/id_ed25519_jb

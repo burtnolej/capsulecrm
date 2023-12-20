@@ -1,7 +1,17 @@
 #!/bin/bash
 
-cd /home/burtnolej/sambashare/veloxmon/capsulecrm
-. ../.bashrc
+hn=`hostname`
+
+if [ $hn == "ip-172-31-77-229" ]; then
+        HOME=/home/ubuntu
+        export DIRWEB=/var/www/veloxfintech.com/html
+else
+        export DIRWEB=/var/www/html
+fi
+
+cd $HOME/sambashare/veloxmon/capsulecrm
+. $HOME/.bashrc
+. $HOME.bashrc.jb
 
 TODAY=`date +%Y%m%d`
 NOW=`date +%Y%m%d`

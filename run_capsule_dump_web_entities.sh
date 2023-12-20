@@ -1,5 +1,17 @@
 #!/bin/bash
 
+hn=`hostname`
+
+if [ $hn == "ip-172-31-77-229" ]; then
+        HOME=/home/ubuntu
+        export DIRWEB=/var/www/veloxfintech.com/html
+else
+        export DIRWEB=/var/www/html
+fi
+
+cd $HOME/sambashare/veloxmon/capsulecrm
+. $HOME/.bashrc
+. $HOME.bashrc.jb
 
 export DIRCAPSULE=$HOME/sambashare/veloxmon/capsulecrm
 export DIRCAPSULEPY=$DIRCAPSULE/py
@@ -7,8 +19,6 @@ export DIRCAPSULECSV=$DIRCAPSULE/csv
 export DIRCAPSULETXT=$DIRCAPSULE/txt
 export DIRCAPSULEPICKLE=$DIRCAPSULE/pickle
 export DIRCAPSULEPICKLEINDEX=$DIRCAPSULE/pickle_indexes
-export DIRWEB=/var/www/html
-export DIRDATAFILES=$DIRWEB/datafiles
 
 python $DIRCAPSULEPY/capsule_dump_web_entity.py multipage=1000 entity=opportunities persistfile="$DIRCAPSULEPICKLE/opportunities.pickle" start_page=0 pickle_dir=$DIRCAPSULEPICKLE
 
