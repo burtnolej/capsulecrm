@@ -78,6 +78,7 @@ fh.write("^".join(fields)+"\n")
 for _entity in query_results:
     #print get_core_field(person,_entity,"firstName")
     #print get_field(person,_entity,"firstName")
-     fh.write("^".join(removeunicode(x) for x in get_multi_field(person,_entity,fields))+"\n")
+     #fh.write("^".join(removeunicode(x) for x in get_multi_field(person,_entity,fields))+"\n")
+     fh.write("^".join(removeunicode(str(x)) for x in get_multi_field(person,_entity,fields))+"\n")
 fh.close()
 
