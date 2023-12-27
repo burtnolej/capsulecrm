@@ -11,7 +11,7 @@ fi
 
 cd $HOME/sambashare/veloxmon/capsulecrm
 . $HOME/.bashrc
-. $HOME.bashrc.jb
+. $HOME/.bashrc.jb
 
 export DIRCAPSULE=$HOME/sambashare/veloxmon/capsulecrm
 export DIRCAPSULEPY=$DIRCAPSULE/py

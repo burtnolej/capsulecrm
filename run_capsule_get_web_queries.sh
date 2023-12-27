@@ -28,10 +28,38 @@ export DIRDATAFILES=$DIRWEB/datafiles
 logname=/tmp/${0##*/}.$NOW.log
 outputpath=/var/www/html/datafiles
 
-#python $DIRCAPSULEPY/capsule_query_entity_indexes.py query_terms='[[("person","Sub Department","EQUITIES"),("person","Seniority","CSUITE|SENIOR")], [("person","Sub Department","CASH_EQUITIES"),("person","Seniority","CSUITE|SENIOR")]]' outputfile="$DIRDATAFILES/equities_csuite_senior_midlevel.csv" pickle_dir=$DIRCAPSULEPICKLEINDEX outputfields='["firstName","lastName","jobTitle","Seniority","id","LinkedInURL","emailAddresses","phoneNumbers"]'
+query_name=('equities_csuite_senior_midlevel' 'entries_meetings' 'cleared_derivs_csuite_senior_midlevel')
 
-python $DIRCAPSULEPY/capsule_query_entity_indexes.py query_terms='[[("entries","activityType","Meeting")]]' outputfile="$DIRDATAFILES/entries_meetings.csv" pickle_dir=$DIRCAPSULEPICKLEINDEX outputfields='["activityType","id","creator","subject","content","party","createdAt"]'
+query_terms=('[[("person","Sub$$Department","EQUITIES"),("person","Seniority","CSUITE|SENIOR")],[("person","Sub$$Department","CASH_EQUITIES"),("person","Seniority","CSUITE|SENIOR")]]' \
+       		'[[("entries","activityType","Meeting")]]' \
+		'[[("person","Sub$$Department","CLEARED_DERIVS"),("person","Seniority","CSUITE|SENIOR|MID_LEVEL")]]')
 
-#python $DIRCAPSULEPY/capsule_query_entity_indexes.py query_terms='[[("person","Sub Department","CLEARED_DERIVS"),("person","Seniority","CSUITE|SENIOR|MID_LEVEL")]]' outputfile="$DIRDATAFILES/cleared_derivs_csuite_senior_midlevel.csv" pickle_dir=$DIRCAPSULEPICKLEINDEX outputfields='["firstName","lastName","jobTitle","Seniority","id","LinkedInURL","emailAddresses","phoneNumbers"]'
+outputfields=('["firstName","lastName","jobTitle","Seniority","id","LinkedInURL","emailAddresses","phoneNumbers"]' \
+		'["activityType","id","creator","subject","content","party","createdAt"]' \
+		'["firstName","lastName","jobTitle","Seniority","id","LinkedInURL","emailAddresses","phoneNumbers"]')
+
+count=0
+
+for query_term in ${query_terms[@]}; do
+	query_term=$(echo $query_term | sed 's/\$\$/ /g')
+	echo "query_term=$query_term"
+	echo "output_fields=${outputfields[$count]}"
+	echo "query_name=${query_name[$count]}"
+	outfile=$DIRDATAFILES/${query_name[$count]}.csv
+	echo "out_file=$outfile"
+	python $DIRCAPSULEPY/capsule_query_entity_indexes.py \
+		query_terms="$query_term" \
+		outputfile=$outfile \
+		pickle_dir=$DIRCAPSULEPICKLEINDEX \
+		outputfields="${outputfields[$count]}"
+	count=$count+1
+done
 
 
+cat /dev/null > $DIRDATAFILES/query_manifest.txt
+for query_name in ${query_name[@]}; do
+        outfile=$DIRDATAFILES/$query_name.csv
+        timestamp=$(date -r $outfile +%Y-%m-%d_%H-%M-%S)
+        linecount=$(wc -l < $outfile)
+        printf "%-50s  %s   %s\n" $query_name $timestamp ${linecount[0]} >> "$DIRDATAFILES/query_manifest.txt"
+done

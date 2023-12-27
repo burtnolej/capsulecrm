@@ -8,14 +8,6 @@ _args = process_args(sys.argv,["query_terms"])
 for _arg in _args:
     locals()[_arg] = _args[_arg]
 
-#query_terms =[("person","Job Type","TECH"),("person","Seniority","SENIOR")]
-#query_terms =[("person","Job Type","TECH"),("person","Seniority","CSUITE"),("person","Sub Department","EQUITIES"),("person","Department","LEADERSHIP")]
-#query_terms =[("person","Job Type","TECH|TECH_OTHER"), \
-#        ("person","Sub Department","EQUITIES|TRADING|CASH_EQUITIES"), \
-#        ("person","Seniority","SENIOR|CSUITE")]
-#
-#query_terms =[("person","Sub Department","CLEARED_DERIVS"),("person","Seniority","CSUITE|SENIOR|MID_LEVEL")]
-
 def inlocals(key):
     return globals().has_key(key)
 
@@ -57,17 +49,6 @@ for query in query_terms:
     query_results = query_results + list(get_intersect(results))
 
 print str(len(query_results))+" results found"
-# specifically for person results for campaignsd
-#entries = recover("entries")
-#fh =open(outputfile,"w+")
-#fh.write("^".join(outputfields)+"\n")
-
-
-#for _entity in query_results:
-#     #fh.write("^".join(removeunicode(x) for x in get_multi_field(entries,_entity,["activityType","id","creator","subject","content","party","createdOn"]))+"\n")
-#     fh.write("^".join(str(removeunicode(str(x))) for x in get_multi_field(entries,_entity,outputfields))+"\n")
-#fh.close()
-#exit()
 
 # specifically for person results for campaignsd
 person = recover("person")
@@ -76,9 +57,9 @@ fh =open(outputfile,"w+")
 fields=["firstName","lastName","jobTitle","Seniority","Job Type","Department","Sub Department","id","LinkedInURL","emailAddresses","phoneNumbers"]
 fh.write("^".join(fields)+"\n")
 for _entity in query_results:
-    #print get_core_field(person,_entity,"firstName")
-    #print get_field(person,_entity,"firstName")
-     #fh.write("^".join(removeunicode(x) for x in get_multi_field(person,_entity,fields))+"\n")
-     fh.write("^".join(removeunicode(str(x)) for x in get_multi_field(person,_entity,fields))+"\n")
+    try:
+        fh.write("^".join(removeunicode(str(x)) for x in get_multi_field(person,_entity,fields))+"\n")
+    except:
+        sys.stderr.write("could not remove unicode for " + str(_entity)+ "\n")
 fh.close()
 

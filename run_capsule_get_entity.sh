@@ -11,7 +11,7 @@ fi
 
 cd $HOME/sambashare/veloxmon/capsulecrm
 . $HOME/.bashrc
-. $HOME.bashrc.jb
+. $HOME/.bashrc.jb
 
 TODAY=`date +%Y%m%d`
 NOW=`date +%Y%m%d`
@@ -38,7 +38,15 @@ entities=("organisation" "entries" "opportunities" "person" "join" )
 outputtype="list"
 outputfields="model"
 
-for entity in ${entities[@]}; do
-	python ./py/capsule_get_entity.py entity=$entity outputtype=$outputtype outputfields=$outputfields outputfile="$DIRDATAFILES/$entity.csv" pickle_dir=$DIRDATAFILES csv_dir=$DIRCAPSULECSV
+#for entity in ${entities[@]}; do
+#	python ./py/capsule_get_entity.py entity=$entity outputtype=$outputtype outputfields=$outputfields outputfile="$DIRDATAFILES/$entity.csv" pickle_dir=$DIRDATAFILES csv_dir=$DIRCAPSULECSV
+#
+#done
 
+cat /dev/null > $DIRDATAFILES/data_manifest.txt
+for entity in ${entities[@]}; do
+        outfile=$DIRDATAFILES/$entity.csv
+        timestamp=$(date -r $outfile +%Y-%m-%d_%H-%M-%S)
+        linecount=$(wc -l < $outfile)
+        printf "%-50s  %s   %s\n" $entity $timestamp ${linecount[0]} >> "$DIRDATAFILES/data_manifest.txt"
 done

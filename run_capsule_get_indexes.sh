@@ -11,7 +11,7 @@ fi
 
 cd $HOME/sambashare/veloxmon/capsulecrm
 . $HOME/.bashrc
-. $HOME.bashrc.jb
+. $HOME/.bashrc.jb
 
 TODAY=`date +%Y%m%d`
 NOW=`date +%Y%m%d`
