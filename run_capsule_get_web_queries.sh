@@ -28,33 +28,49 @@ export DIRDATAFILES=$DIRWEB/datafiles
 logname=/tmp/${0##*/}.$NOW.log
 outputpath=/var/www/html/datafiles
 
-query_name=('equities_csuite_senior_midlevel' 'entries_meetings' 'cleared_derivs_csuite_senior_midlevel')
+query_name=('equities_csuite_senior_midlevel' 'entries_meetings' 'cleared_derivs_csuite_senior_midlevel' 'test_organisation' 'test_join')
 
 query_terms=('[[("person","Sub$$Department","EQUITIES"),("person","Seniority","CSUITE|SENIOR")],[("person","Sub$$Department","CASH_EQUITIES"),("person","Seniority","CSUITE|SENIOR")]]' \
        		'[[("entries","activityType","Meeting")]]' \
-		'[[("person","Sub$$Department","CLEARED_DERIVS"),("person","Seniority","CSUITE|SENIOR|MID_LEVEL")]]')
+		'[[("person","Sub$$Department","CLEARED_DERIVS"),("person","Seniority","CSUITE|SENIOR|MID_LEVEL")]]' \
+		'[[("organisation","Company$$Type","INVESTMENT_BANK")]]' \
+		'[[("join","Seniority","CSUITE")]]')
+
 
 outputfields=('["firstName","lastName","jobTitle","Seniority","id","LinkedInURL","emailAddresses","phoneNumbers"]' \
 		'["activityType","id","creator","subject","content","party","createdAt"]' \
-		'["firstName","lastName","jobTitle","Seniority","id","LinkedInURL","emailAddresses","phoneNumbers"]')
+		'["firstName","lastName","jobTitle","Seniority","id","LinkedInURL","emailAddresses","phoneNumbers"]' \
+		'["name","Company$$Type"]' \
+	       	'["firstName","lastName","jobTitle","name","Company$$Type"]')
+
+#query_name=('test_organisation' 'test_join')
+#query_terms=('[[("organisation","Company$$Type","INVESTMENT_BANK")]]' '[[("join","Seniority","CSUITE")]]')
+#outputfields=('["name","Company$$Type"]' '["firstName","lastName","jobTitle","name","Company$$Type"]')
 
 count=0
 
 for query_term in ${query_terms[@]}; do
 	query_term=$(echo $query_term | sed 's/\$\$/ /g')
+	outputfields=$(echo ${outputfields[$count]} | sed 's/\$\$/ /g')
+
 	echo "query_term=$query_term"
-	echo "output_fields=${outputfields[$count]}"
+	echo "outputfields=$outputfields"
 	echo "query_name=${query_name[$count]}"
 	outfile=$DIRDATAFILES/${query_name[$count]}.csv
 	echo "out_file=$outfile"
+
 	python $DIRCAPSULEPY/capsule_query_entity_indexes.py \
 		query_terms="$query_term" \
 		outputfile=$outfile \
 		pickle_dir=$DIRCAPSULEPICKLEINDEX \
-		outputfields="${outputfields[$count]}"
-	count=$count+1
-done
+		outputfields="$outputfields" \
+		reduced="false"
 
+	count=$count+1
+	echo
+	echo
+	echo
+done
 
 cat /dev/null > $DIRDATAFILES/query_manifest.txt
 for query_name in ${query_name[@]}; do

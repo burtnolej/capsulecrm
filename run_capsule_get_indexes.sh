@@ -28,6 +28,9 @@ export DIRDATAFILES=$DIRWEB/datafiles
 logname=/tmp/${0##*/}.$NOW.log
 outputpath=/var/www/html/datafiles
 
+python $DIRCAPSULEPY/capsule_get_entity_indexes.py entity="join" entity_key="Seniority" pickle_dir=$DIRCAPSULEPICKLEINDEX
+exit
+
 python $DIRCAPSULEPY/capsule_get_entity_indexes.py entity="person" entity_key="firstName|lastName" pickle_dir=$DIRCAPSULEPICKLEINDEX
 
 python $DIRCAPSULEPY/capsule_get_entity_indexes.py entity="person" entity_key="organisation" subentity_key="id" pickle_dir=$DIRCAPSULEPICKLEINDEX

@@ -8,16 +8,20 @@ _args = process_args(sys.argv,["entity"])
 for _arg in _args:
     locals()[_arg] = _args[_arg]
 
-entities = recover(entity,True,pickledir=dircapsulepickle)
+if reduced==True:
+    entities = recover("reduced_" + entity,True,pickledir=dircapsulepickleindex)
+else:
+    entities = recover(entity,True,pickledir=dircapsulepickleindex)
+
 
 pprint.pprint(len(entities.keys()))
 
-try:
-    pprint.pprint(entities[myid])
-except:
-    pprint.pprint(entities[entities.keys()[0]])
+for _key in entities.keys():
+    print _key,len(entities[_key])
 
 
+pprint.pprint(entities[entities.keys()[0]])
 
+#pprint.pprint(entities[int(myid)])
 
 

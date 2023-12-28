@@ -32,7 +32,11 @@ for query in query_terms:
 
         if inlocals(entity) == False:
             index_name = entity+"_"+field.replace(" ","_").lower()
-            pickle_name = index_name+".pickle" 
+            if reduced==True:
+                pickle_name = "reduced_" + index_name+".pickle" 
+            else:
+                pickle_name = index_name+".pickle" 
+
             setlocal(index_name,recover(pickle_name,True))
             if len(getlocal(index_name).keys())==0:
                 sys.stderr.write("empty index returned for " + index_name)
@@ -50,16 +54,19 @@ for query in query_terms:
 
 print str(len(query_results))+" results found"
 
-# specifically for person results for campaignsd
-person = recover("person")
-fh =open(outputfile,"w+")
+#all entitys within a query term will be the same so pick 1st entity to recover
+if reduced==True:
+    entities = recover("reduced_"+entity)
+else:
+    entities = recover(entity)
 
-fields=["firstName","lastName","jobTitle","Seniority","Job Type","Department","Sub Department","id","LinkedInURL","emailAddresses","phoneNumbers"]
-fh.write("^".join(fields)+"\n")
+fh=open(outputfile,"w+")
+fh.write("^".join(outputfields)+"\n")
 for _entity in query_results:
-    try:
-        fh.write("^".join(removeunicode(str(x)) for x in get_multi_field(person,_entity,fields))+"\n")
-    except:
-        sys.stderr.write("could not remove unicode for " + str(_entity)+ "\n")
+    output=[] 
+    field_values = get_multi_field(entities,_entity,outputfields)
+    for value in field_values:
+        output.append(removeunicode(value))
+    fh.write("^".join(output))
+    fh.write("\n")
 fh.close()
-
